@@ -18,12 +18,16 @@ span#launch-search {
 	font-weight: 500;
 }
 
-.bg-green, .bg-green input[type="text"] {
+.bg-primary input[type="text"] {
+    color: white;
+}
+
+button#devices-tag-btn, .bg-green, .bg-green input[type="text"] {
     background-color: #00dca9;
     color: white;
 }
 
-.bg-orange, .bg-orange input[type="text"] {
+button#utensils-tag-btn, .bg-orange, .bg-orange input[type="text"] {
 	background-color: #ff5a47;
 	color: white;
 }
