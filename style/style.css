@@ -1,0 +1,24 @@
+/*Search*/
+input[type="text"] {
+    border: none;
+    border-color: transparent;
+}
+
+span#launch-search {
+    border: none;
+}
+
+#search-input {
+    background-color: #e9ecef;
+}
+
+/*Btn*/
+.bg-green {
+    background-color: #00dca9;
+    color: white;
+}
+
+.bg-orange {
+    background-color: #00dca9;
+    color: white;
+}
