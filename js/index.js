@@ -1,4 +1,4 @@
-import {recipes} from './recipe.js';
+import {recipes} from "./recipe.js";
 
 console.log(recipes);
 //Array
@@ -12,3 +12,6 @@ const create = (elm, attributes) => {
     }
     return element;
 }
+
+let img = create("div", {class: "card-img-top card-img-placeholder", alt: "card-image"});
+let title = create("h2", {class: "card-title w-50 card-content-title"});
