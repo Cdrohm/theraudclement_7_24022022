@@ -15,3 +15,6 @@ const create = (elm, attributes) => {
 
 let img = create("div", {class: "card-img-top card-img-placeholder", alt: "card-image"});
 let title = create("h2", {class: "card-title w-50 card-content-title"});
+    title.textContent = recipes[1].name;
+let time = create("div", {class: "d-flex font-weight-bold"});
+    time.innerHTML = "<span class= 'far fa-clock mt-2' style='font-size: 1.5rem'></span>"
