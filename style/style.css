@@ -12,7 +12,7 @@ span#launch-search {
     background-color: #e9ecef;
 }
 
-/*Btn*/
+n*/
 .btn {
 	padding: 1.25rem;
 	font-weight: 500;
@@ -22,14 +22,24 @@ span#launch-search {
     color: white;
 }
 
-button#devices-tag-btn, .bg-green, .bg-green input[type="text"] {
+.btn.bg-green, .bg-green input[type="text"] {
     background-color: #00dca9;
     color: white;
 }
 
-button#utensils-tag-btn, .bg-orange, .bg-orange input[type="text"] {
+.btn.bg-green:hover {
+    background-color: #00a881;
+    color: white;
+}
+
+.btn.bg-orange, .bg-orange input[type="text"] {
 	background-color: #ff5a47;
 	color: white;
+}
+
+.btn.bg-orange:hover {
+    background-color: #ff2c14;
+    color: white;
 }
 
 /*Card*/
