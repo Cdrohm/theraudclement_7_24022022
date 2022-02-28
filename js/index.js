@@ -3,6 +3,7 @@ console.log(recipes);
 
 //Array
 let recipesArray = Object.entries(recipes);
+console.log(recipesArray);
 
 //F create recipe block for card
 const create = (elm, attributes) => {
@@ -31,7 +32,7 @@ let createCard = (recipes) => {
 
         //Card Ingredients
         let ingredients = create("div", {class: "ingredient-container"});
-        let eachIngredient = recipe[1].ingredients.map(function(ingredients) {
+        let eachIngredient = recipes[1].ingredients.map(function(ingredients) {
             if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
                 return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span>: "+ ingredients.quantity + ingredients.unit + "</p>";
             } else if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && !Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
@@ -61,10 +62,10 @@ let createCard = (recipes) => {
 
         //Card body
         let cardBody = create("div", {class: "card-body d-flex justify-content-between card-content"});
-	
+        console.log("test card body");
         //combine in card body
 	    cardBody.appendChild(ingredients);
-        cardBody.appendChild(method);
+        cardBody.appendChild(instructions);
         cardBody.appendChild(appliances);
         cardBody.appendChild(utensils);
 
@@ -76,8 +77,11 @@ let createCard = (recipes) => {
         cardContainer.appendChild(headerParent);
         cardContainer.appendChild(cardBody);
 
+        //var for send to div
         let mainSection = document.getElementById("main");
 
         //into DOM
         mainSection.appendChild(cardContainer);
     }
+
+    recipesArray.forEach(recipe => createCard(recipe));
