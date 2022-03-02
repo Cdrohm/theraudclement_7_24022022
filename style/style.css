@@ -47,6 +47,7 @@ span#launch-search {
 .show {
     display: block;
 }
+
 /*Card*/
 .card {
     border: 1px solid transparent;
@@ -91,7 +92,7 @@ span#launch-search {
 }
 
 /*recipes*/
-.recipe-card {
+article.card.recipe-card.pb-3.mb-5 {
 	background-color: #f8f9fb;
 	border-radius: 10px;
 	min-width: 30%;
