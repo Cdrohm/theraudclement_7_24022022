@@ -44,7 +44,20 @@ span#launch-search {
     color: white;
 }
 
+.show {
+    display: block;
+}
 /*Card*/
+.card {
+    border: 1px solid transparent;
+}
+
+.card-deck {
+	margin: 0!important;
+	position: absolute;
+	top: 25rem;
+}
+
 .card-content {
 	font-size: 0.9rem;
 	overflow: hidden;
@@ -60,6 +73,21 @@ span#launch-search {
 	background-color: #c9bdbd;
 	min-height: 200px;
 	border-radius: 10px 10px 0 0;
+}
+
+.ingredient-container {
+	overflow: hidden;
+}
+
+.description {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+	text-align: justify;
+	padding-right: 1em;
+	margin: 0 -1em -2rem .5rem;
 }
 
 /*recipes*/
