@@ -23,22 +23,32 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/6b2f05754f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./js/index.js" defer></script>
+    
+
     <title>Les Petits Plats</title>
   </head>
 
   <body>
     <div class="container-fluid">
-      <!--header-->
+      <!--Header-->
       <div class="row">
         <nav class="col navbar navbar-expand">
-          <a href="index.html" class="navbar-brand mx-auto">
-            <img src="./img/logo.png" alt="Logo Les Petits Plats" width="275" />
+          <a class="navbar-brand mx-auto d-block mt-4" href="index.html">
+            <img
+              src="./img/logo.png"
+              width="300"
+              alt="Les Petits Plats Homepage"
+            />
           </a>
         </nav>
       </div>
 
-      <!--research nav-->
-      <div class="row" id="searchBar">
+      <div class="row">
         <div class="col input-group input-group-lg mx-5 mb-4" id="autocomplete">
           <input
             class="form-control"
@@ -55,10 +65,11 @@
         </div>
       </div>
 
-      <!--for selected tag(s)-->
-      <div id="tag-selected"></div>
+      <!--Tags-->
+      <div id="selected-tags" class="mx-5"></div>
 
-      <!--3 Dropdown filters menus-->
+      <!--Dropdown menu filters-->
+      <!--Ingredients-->
       <div class="btn-group ml-3 ml-md-5 mt-3">
         <div class="dropdown-parent">
           <button
@@ -86,9 +97,10 @@
           </div>
         </div>
 
+        <!--Device-->
         <div class="dropdown-parent">
           <button
-            id="devices-tag-btn"
+            id="appliances-tag-btn"
             class="btn bg-green btn-lg mx-2 tag-btn show"
             type="button"
           >
@@ -107,11 +119,15 @@
               <span class="fas fa-chevron-up mr-2 align-self-center"></span>
             </div>
             <div class="container-tag-options bg-green">
-              <ul class="dropdown-choices bg-green" id="devices-dropdown"></ul>
+              <ul
+                class="dropdown-choices bg-green"
+                id="appliances-dropdown"
+              ></ul>
             </div>
           </div>
         </div>
 
+        <!--Utensils-->
         <div class="dropdown-parent">
           <button
             id="utensils-tag-btn"
@@ -142,10 +158,9 @@
         </div>
       </div>
 
-      <!--grid or flex for recipes-->
+      <!--Recipe block-->
       <div class="card-deck pl-4">
-          <div class="d-flex flex-wrap id="main">
-          </div>
+        <div class="d-flex flex-wrap" id="main"></div>
       </div>
     </div>
 
@@ -165,8 +180,5 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    
-    <!--Way to JS-->
-    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

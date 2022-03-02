@@ -1,87 +1,88 @@
-import {recipes} from "./recipe.js";
-console.log(recipes);
+import {recipes} from './recipe.js';
 
-//Array
 let recipesArray = Object.entries(recipes);
-console.log(recipesArray);
 
-//F create recipe block for card
+//console.log(recipesArray);
+
+//f Create element
 const create = (elm, attributes) => {
-    const element = document.createElement(elm);
-    for(let key in attributes) {
-        element.setAttribute(key, attributes[key])
-    }
-    return element;
+	const element = document.createElement(elm);
+	for (let key in attributes) {
+		element.setAttribute(key, attributes[key])
+	}
+	return element;
 }
 
-//Create Card
-let createCard = (recipes) => {
-    let image = create("div", {class: "card-img-top card-img-placeholder", alt: "card-image"});
-    let title = create("h2", {class: "card-title w-50 card-content-title"});
-        title.textContent = recipes[1].name;
-        //console.log(title);
-    let timeParent = create("div", {class: "d-flex font-weight-bold"});
-        timeParent.innerHTML = "<span class= 'far fa-clock mt-2' style='font-size: 1.5rem'></span>"
-                        + "<p class= 'ml-2' style='font-size: 1.5rem'>" + recipes[1].time + "min </p>"
-    //console.log(timeParent);
+let createCard = (recipe) => {
+	
+    //Image
+	let image = create("div", {class: "card-img-top card-img-placeholder", alt: "card-image"});
+	
+    //Title
+	let title = create("h2", {class: "card-title w-50 card-content-title"});
+	title.textContent = recipe[1].name;
 
-        //Card Header
-        let headerParent = create("div", {class: "d-flex justify-content-between mt-3 px-3"});
-        headerParent.appendChild(title);
-        headerParent.appendChild(timeParent);
+	let timeParent = create("div", {class: "d-flex font-weight-bold"});
+	timeParent.innerHTML = "<span class='far fa-clock mt-2' style='font-size:1.5rem'></span>"
+							+ "<p class='ml-2' style='font-size:1.5rem'>" + recipe[1].time + " min</p>"
 
-        //Card Ingredients
-        let ingredients = create("div", {class: "ingredient-container"});
-        let eachIngredient = recipes[1].ingredients.map(function(ingredients) {
-            if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
-                return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span>: "+ ingredients.quantity + ingredients.unit + "</p>";
-            } else if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && !Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
-                return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span>: "+ ingredients.quantity + "</p>";
-            } else if (!Object.prototype.hasOwnProperty.call(ingredients, "quantity") && !Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
-                return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span></p>";
-            }
-        }).join("");
+	//Header elements
+	let headerParent = create("div", {class: "d-flex justify-content-between mt-3 px-3"});
+	headerParent.appendChild(title);
+	headerParent.appendChild(timeParent);
 
-        ingredients.innerHTML = eachIngredient;
+	//Ingredients list
+	let ingredients = create("div", {class: "ingredient-container"});
 
-        //Cook instructions
-        let instructions = create("div", {class: "description w-50"});
-        instructions.textContent = recipes[1].description;
+	let eachIngredient = recipe[1].ingredients.map(function(ingredients) {
+		if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
+			return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span>: "+ ingredients.quantity + ingredients.unit + "</p>";
+		} else if (Object.prototype.hasOwnProperty.call(ingredients, "quantity") && !Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
+			return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span>: "+ ingredients.quantity + "</p>";
+		} else if (!Object.prototype.hasOwnProperty.call(ingredients, "quantity") && !Object.prototype.hasOwnProperty.call(ingredients, "unit")) {
+			return "<p class='mb-0'><span class='font-weight-bold ingredient'>" + ingredients.ingredient + "</span></p>";
+		}
+	}).join("");
 
-        //Device
-        let appliances = create("p", {class: "sr-only device"});
-        appliances.textContent = recipes[1].appliance;
+	ingredients.innerHTML = eachIngredient;
 
-        //Utensils
-        let utensils = create("div", {class: "sr-only"});
-        let eachUtensils = recipes[1].ustensils.map(function(utensil) {
-            return "<p class= 'utensil'>" + utensil + "</p>";
-        }).join("");
+	//cook instruction / method
+	let method = create("p", {class: "description w-50"});
+	method.textContent = recipe[1].description;
 
-        utensils.innerHTML = eachUtensils;
+	//Device section
+	let appliances = create("p", {class: "sr-only appliance"});
+	appliances.textContent = recipe[1].appliance;
+	//utensils section
+	let utensils = create("div", {class: "sr-only"});
+	let eachUtensils = recipe[1].ustensils.map(function(utensil) {
+		return "<p class='utensil'>" + utensil + "</p>";
+	}).join("");
+	utensils.innerHTML = eachUtensils;
+	
 
-        //Card body
-        let cardBody = create("div", {class: "card-body d-flex justify-content-between card-content"});
-        console.log("test card body");
-        //combine in card body
-	    cardBody.appendChild(ingredients);
-        cardBody.appendChild(instructions);
-        cardBody.appendChild(appliances);
-        cardBody.appendChild(utensils);
+	//Card body
+	let cardBody = create("div", {class: "card-body d-flex justify-content-between card-content"});
+	
+    //Put in card body
+	cardBody.appendChild(ingredients);
+	cardBody.appendChild(method);
+	cardBody.appendChild(appliances);
+	cardBody.appendChild(utensils);
 
-        //card container
-        let cardContainer = create("article", {class: "card recipe-card pb-3 mb-5"});
+	//Card container
+	let cardContainer = create("article", {class: "card recipe-card pb-3 mb-5"});
 
-        //to DOM
-        cardContainer.appendChild(image);
-        cardContainer.appendChild(headerParent);
-        cardContainer.appendChild(cardBody);
+	//to DOM
+	cardContainer.appendChild(image);
+	cardContainer.appendChild(headerParent);
+	cardContainer.appendChild(cardBody);
 
-        //var for send to div
-        let mainSection = document.getElementById("main");
+    //declare main
+	let mainSection = document.getElementById("main");
 
-        //into DOM
-        mainSection.appendChild(cardContainer);
-    }
+	//Put
+	mainSection.appendChild(cardContainer);
+}
 
-    recipesArray.forEach(recipe => createCard(recipe));
+recipesArray.forEach(recipe => createCard(recipe));
