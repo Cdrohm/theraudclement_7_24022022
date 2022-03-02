@@ -13,6 +13,8 @@ span#launch-search {
 }
 
 
+/*Dropdown*/
+/*BTN*/
 .btn {
 	padding: 1.25rem;
 	font-weight: 500;
@@ -43,3 +45,28 @@ span#launch-search {
 }
 
 /*Card*/
+.card-content {
+	font-size: 0.9rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 150px;
+}
+
+.card-content-title {
+	font-size: 1.5rem;
+}
+
+.card-img-placeholder {
+	background-color: #c9bdbd;
+	min-height: 200px;
+	border-radius: 10px 10px 0 0;
+}
+
+/*recipes*/
+.recipe-card {
+	background-color: #f8f9fb;
+	border-radius: 10px;
+	min-width: 30%;
+	max-width: 30%;
+	cursor: pointer;
+}
