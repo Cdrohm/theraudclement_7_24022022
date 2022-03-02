@@ -94,8 +94,10 @@ span#launch-search {
 /*recipes*/
 article.card.recipe-card.pb-3.mb-5 {
 	background-color: #f8f9fb;
+    border: 1px solid transparent;
 	border-radius: 10px;
 	min-width: 30%;
 	max-width: 30%;
 	cursor: pointer;
 }
+
