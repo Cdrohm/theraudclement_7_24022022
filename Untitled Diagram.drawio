@@ -1,74 +1,23 @@
-<mxfile host="app.diagrams.net" modified="2022-03-02T16:24:48.353Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="gH865yaaqDSVwGnuagC4" version="16.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-02T16:52:55.408Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="aiA_BfIf7iskvsojH9HT" version="16.6.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="120" y="90" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="User search" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="60" y="10" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="600" y="90" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-1" target="D-tgBikeAYWPkGbDKpoR-15">
+        <mxCell id="D-tgBikeAYWPkGbDKpoR-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="D-tgBikeAYWPkGbDKpoR-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-1" target="D-tgBikeAYWPkGbDKpoR-12">
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="User search" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="80" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="D-tgBikeAYWPkGbDKpoR-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-26" target="D-tgBikeAYWPkGbDKpoR-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-1" value="User select&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="540" y="10" width="120" height="30" as="geometry" />
+        <mxCell id="D-tgBikeAYWPkGbDKpoR-26" value="Requête décomposée en &lt;b&gt;KEYWORDS&lt;/b&gt; (-mots inutiles)&lt;br&gt;&lt;i&gt;= stop words&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=1;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="55" y="145" width="170" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-9" target="D-tgBikeAYWPkGbDKpoR-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-5" value="Recipe.json" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="90" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-6" value="Aucune recette" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="220" y="110" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-9" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="175" y="120" width="30" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-5" target="D-tgBikeAYWPkGbDKpoR-9">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="160" y="130" as="sourcePoint" />
-            <mxPoint x="220" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="600" y="280" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-11" value="Recipe.json" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="560" y="160" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-12" target="D-tgBikeAYWPkGbDKpoR-11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-12" value="utensil" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="670" y="120" width="80" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-14" target="D-tgBikeAYWPkGbDKpoR-11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-14" value="appliance" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="560" y="90" width="80" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="D-tgBikeAYWPkGbDKpoR-15" target="D-tgBikeAYWPkGbDKpoR-11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="D-tgBikeAYWPkGbDKpoR-15" value="ingredient" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="450" y="120" width="80" height="40" as="geometry" />
+        <mxCell id="D-tgBikeAYWPkGbDKpoR-28" value="Toutes les recettes dans une base&lt;br&gt;&lt;b&gt;(filteredRecipes)&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="250" width="140" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
