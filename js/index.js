@@ -86,3 +86,6 @@ let createCard = (recipe) => {
 }
 
 recipesArray.forEach(recipe => createCard(recipe));
+
+
+//Dropdown filters
