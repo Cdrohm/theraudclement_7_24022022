@@ -14,10 +14,48 @@ span#launch-search {
 
 
 /*Dropdown*/
+.dropdown-parent {
+	position: relative;
+	z-index: 100;
+}
+
+.dropdown-choices {
+	display: none;
+}
+
+.show-opts .dropdown-choices {
+	display: flex;
+	flex-wrap: wrap;
+	writing-mode: vertical-lr;
+	z-index: 3;
+	max-width: 700px;
+	max-height: 400px;
+	overflow: hidden;
+	padding-left: 0;
+	margin: -0.5rem 0 0 0;
+	padding: 0;
+}
+
+.fa-chevron-down {
+	margin-left: 1rem;
+	margin-top: .5rem;
+}
+
+.dropdown-item {
+	color: white;
+	cursor: pointer;
+	width: 33%;
+	writing-mode: horizontal-tb;
+}
+
 /*BTN*/
 .btn {
 	padding: 1.25rem;
 	font-weight: 500;
+}
+
+.btn:hover {
+	color: white;
 }
 
 .bg-primary input[type="text"] {
@@ -46,6 +84,18 @@ span#launch-search {
 
 .show {
     display: block;
+}
+
+.opened-btn-container.show {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+
+}
+
+/*Ingredients*/
+.ingredient-container {
+	overflow: hidden;
 }
 
 /*Card*/

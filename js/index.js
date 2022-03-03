@@ -97,7 +97,7 @@ let addItem = (array, parentElm) => {
 	})
 }
 
-//Searchon tag buttons
+//Search on tag buttons
 let tagSearch = (input, options) => {
 	input.addEventListener("input", function(e) {
 		for (let i=0; i<options.length; i++) {
@@ -162,11 +162,11 @@ Array.from(document.getElementsByClassName("fa-chevron-up")).forEach(item => {
 	});
 });
 
-//ingredient tag
+//Ingredient tag
 document.getElementById("ingredients-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")});
-//appliances tag
+//Appliances tag
 document.getElementById("appliances-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".appliance", "appliances-dropdown", "appliances-tag-input", "#appliances-dropdown .dropdown-item")});
-//utensils tag
+//Utensils tag
 document.getElementById("utensils-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".utensil", "utensils-dropdown", "utensils-tag-input", "#utensils-dropdown .dropdown-item")});
 
 //Ingredients dropdown
