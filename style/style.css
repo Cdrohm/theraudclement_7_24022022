@@ -12,18 +12,7 @@ span#launch-search {
     background-color: #e9ecef;
 }
 
-/*Tags*/
-.tag-search {
 
-}
-
-.tag-search.show {
-
-}
-
-.tag-search-input::placeholder {
-
-}
 
 /*Dropdown*/
 .dropdown-parent {
@@ -106,6 +95,21 @@ span#launch-search {
 	display: flex;
 	flex-direction: column;
 
+}
+
+/*Tags*/
+.tag-search {
+
+}
+
+.tag-search.show {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.tag-search-input::placeholder {
+	color: white;
 }
 
 /*Ingredients*/
