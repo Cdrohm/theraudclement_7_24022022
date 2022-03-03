@@ -42,10 +42,13 @@ span#launch-search {
 	margin-top: .5rem;
 }
 
-.dropdown-item {
-	color: white; /*non pris en compte??*/
+li.dropdown-item {
+	color: white;
 	cursor: pointer;
 	writing-mode: horizontal-tb;
+	display: flex;
+	justify-content: flex-start;
+	width: 33%;
 }
 
 /*BTN*/

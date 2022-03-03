@@ -170,6 +170,7 @@ document.getElementById("appliances-tag-btn").addEventListener("click", function
 document.getElementById("utensils-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".utensil", "utensils-dropdown", "utensils-tag-input", "#utensils-dropdown .dropdown-item")});
 
 //Ingredients dropdown
+tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#ingradients-dropdown .dropdown-item")));
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
 tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
 
@@ -192,3 +193,8 @@ let quickSort = (array, left, right) => {
 	return array;
 }
 
+//Left + right elements list
+let partition = (array, left, right) => {
+	//
+	let pivot = array[Math.floor((right + left) / 2)];
+}
