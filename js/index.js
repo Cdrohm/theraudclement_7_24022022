@@ -87,8 +87,66 @@ let createCard = (recipe) => {
 
 recipesArray.forEach(recipe => createCard(recipe));
 
+//Tags
+//Add items for dropdown options
+let addItem = (array, parentElm) => {
+	array.forEach(item => {
+		let option = create("li", {class: "dropdown-item"});
+		option.textContent = item.charAt(0).toUpperCase() + item.slice(1);
+		parentElm.appendChild(option);
+	})
+}
+
+//Searchon tag buttons
+let tagSearch = (input, options) => {
+	input.addEventListener("input", function(e) {
+		for (let i=0; i<options.length; i++) {
+			if (!options[i].textContent.toLowerCase().includes(e.target.value.toLowerCase())) {
+				options[i].style.display = "none";
+			} else {
+				options[i].removeAttribute("style");
+			}
+		}
+	})
+}
 
 //Dropdown filters
+
+//Open dropdown
+let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
+console.log ("test");
+	//close other open dropdowns, if any
+	closeAllDropdowns();
+
+	//current dropdown DOM
+	let dropdownContainer = document.getElementById(parentElm);
+
+	//empty current dropdown
+	dropdownContainer.textContent = "";
+
+	//take available tag options from DOM
+	let choices = Array.from(document.querySelectorAll(className));
+	let choicesArr = [];
+	choices.forEach(choice => {
+		choicesArr.push(choice.textContent);
+	})
+	let optionsArr = [...new Set(choicesArr)];
+
+	//put into dropdown options
+	addItem(optionsArr, dropdownContainer);
+
+	//search input DOM
+	let inputField = document.getElementById(inputId);
+
+	//run keyword search function
+	tagSearch(inputField, Array.from(document.querySelectorAll(optionsArray)));
+	inputField.parentElement.classList.add("show");
+	inputField.parentNode.parentElement.classList.add("show");
+	dropdownContainer.parentElement.classList.add("show-opts");
+	btn.style.display = "none";
+};
+
+//Close Dropdown
 let closeAllDropdowns = () => {
 	Array.from(document.getElementsByClassName("tag-btn")).forEach(btn => {btn.removeAttribute("style")});
 	Array.from(document.getElementsByClassName("tag-search")).forEach(item => {item.classList.remove("show")});
@@ -97,9 +155,20 @@ let closeAllDropdowns = () => {
 	Array.from(document.getElementsByClassName("fa-chevron-down")).forEach(item => {item.removeAttribute("style")});
 }
 
-//Dropdown close
+//Dropdown close on click icon
 Array.from(document.getElementsByClassName("fa-chevron-up")).forEach(item => {
 	item.addEventListener("click", function() {
 		closeAllDropdowns();
 	});
 });
+
+//ingredient tag
+document.getElementById("ingredients-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")});
+//appliances tag
+document.getElementById("appliances-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".appliance", "appliances-dropdown", "appliances-tag-input", "#appliances-dropdown .dropdown-item")});
+//utensils tag
+document.getElementById("utensils-tag-btn").addEventListener("click", function(e) {openDropdown(e.target, ".utensil", "utensils-dropdown", "utensils-tag-input", "#utensils-dropdown .dropdown-item")});
+
+//Ingredients dropdown
+tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
+tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
