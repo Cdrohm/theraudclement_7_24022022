@@ -44,7 +44,7 @@ span#launch-search {
 .dropdown-item {
 	color: white;
 	cursor: pointer;
-	width: 33%;
+	width: 150px;
 	writing-mode: horizontal-tb;
 }
 
