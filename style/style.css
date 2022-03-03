@@ -44,7 +44,6 @@ span#launch-search {
 .dropdown-item {
 	color: white;
 	cursor: pointer;
-	width: 150px;
 	writing-mode: horizontal-tb;
 }
 
@@ -84,6 +83,10 @@ span#launch-search {
 
 .show {
     display: block;
+}
+
+.opened-btn-container {
+	display: none;
 }
 
 .opened-btn-container.show {
