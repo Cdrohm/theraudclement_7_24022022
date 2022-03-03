@@ -89,3 +89,17 @@ recipesArray.forEach(recipe => createCard(recipe));
 
 
 //Dropdown filters
+let closeAllDropdowns = () => {
+	Array.from(document.getElementsByClassName("tag-btn")).forEach(btn => {btn.removeAttribute("style")});
+	Array.from(document.getElementsByClassName("tag-search")).forEach(item => {item.classList.remove("show")});
+	Array.from(document.getElementsByClassName("container-tag-options")).forEach(item => {item.classList.remove("show-opts")});
+	Array.from(document.getElementsByClassName("opened-btn-container")).forEach(item => {item.classList.remove("show")});
+	Array.from(document.getElementsByClassName("fa-chevron-down")).forEach(item => {item.removeAttribute("style")});
+}
+
+//Dropdown close
+Array.from(document.getElementsByClassName("fa-chevron-up")).forEach(item => {
+	item.addEventListener("click", function() {
+		closeAllDropdowns();
+	});
+});
