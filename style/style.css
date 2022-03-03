@@ -12,6 +12,18 @@ span#launch-search {
     background-color: #e9ecef;
 }
 
+/*Tags*/
+.tag-search {
+
+}
+
+.tag-search.show {
+
+}
+
+.tag-search-input::placeholder {
+
+}
 
 /*Dropdown*/
 .dropdown-parent {
@@ -42,7 +54,7 @@ span#launch-search {
 }
 
 .dropdown-item {
-	color: white;
+	color: white; /*non pris en compte??*/
 	cursor: pointer;
 	writing-mode: horizontal-tb;
 }
@@ -61,7 +73,7 @@ span#launch-search {
     color: white;
 }
 
-.btn.bg-green, .bg-green input[type="text"] {
+.btn.bg-green, .bg-green, .bg-green input[type="text"] {
     background-color: #00dca9;
     color: white;
 }
@@ -71,7 +83,7 @@ span#launch-search {
     color: white;
 }
 
-.btn.bg-orange, .bg-orange input[type="text"] {
+.btn.bg-orange, .bg-orange, .bg-orange input[type="text"] {
 	background-color: #ff5a47;
 	color: white;
 }
