@@ -173,28 +173,3 @@ document.getElementById("utensils-tag-btn").addEventListener("click", function(e
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#ingradients-dropdown .dropdown-item")));
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
 tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
-
-
-//SEARCH algo 1
-
-//F to extract and sort keywords
-//Sorting F | if more elements left + more elements right
-let quickSort = (array, left, right) => {
-	let index;
-	if (array.length > 1) {
-		index = partition (array, left, right);
-		if (left < index-1) {
-			quickSort (array, left, index-1);
-		}
-		if (index < right) {
-			quickSort (array, index, right);
-		}
-	}
-	return array;
-}
-
-//Left + right elements list
-let partition = (array, left, right) => {
-	//
-	let pivot = array[Math.floor((right + left) / 2)];
-}
