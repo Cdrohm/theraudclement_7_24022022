@@ -221,7 +221,7 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 
 
 
-//Search F algo 1
+//Search F algo 1 (array Recipes: ingredients/appliances/methods/utensils)
 
 let recipe = []
 
