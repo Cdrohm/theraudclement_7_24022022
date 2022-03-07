@@ -100,6 +100,10 @@ li.dropdown-item {
 
 }
 
+button.btn.selected-tag-btn {
+	color: white;
+}
+
 /*Tags*/
 .tag-search {
 
@@ -115,6 +119,11 @@ li.dropdown-item {
 	color: white;
 }
 
+.fa-times:before {
+	color: white;
+	border-radius: 50%;
+	
+}
 /*Ingredients*/
 .ingredient-container {
 	overflow: hidden;

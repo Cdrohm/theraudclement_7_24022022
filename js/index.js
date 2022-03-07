@@ -88,6 +88,51 @@ let createCard = (recipe) => {
 recipesArray.forEach(recipe => createCard(recipe));
 
 //Tags
+//Create selected tag button
+let createTag = (target) => {
+	let selectedTag = create("button", {class: "btn selected-tag-btn"});
+	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times ml-2'></i>";
+	let computedStyle = getComputedStyle(target.parentNode.parentElement);
+	selectedTag.style.backgroundColor = computedStyle.getPropertyValue("background-color");
+	//Put to DOM
+	document.getElementById("selected-tags").appendChild(selectedTag);
+}
+
+//F to filter by tag
+let filterByTag = (tag) => {
+	let recipeCards = Array.from(document.getElementsByClassName("recipe-card"));
+	let input = tag.textContent.toLowerCase();
+	for (let i = 0; i<recipeCards.length; i++) {
+		if (!recipeCards[i].hasAttribute("style")) {
+			if (!recipeCards[i].innerHTML.toLowerCase().includes(input)) {
+				recipeCards[i].style.display = "none";
+			} else {
+				recipeCards[i].removeAttribute("style");
+			}
+		}
+	}
+}
+
+//F when user click on a tag option
+document.addEventListener("click", function(e) {
+	if (e.target.matches(".dropdown-item")) { //selecting tag filter
+		createTag(e.target);
+		filterByTag(e.target);
+		closeAllDropdowns();
+	} else if (e.target.matches(".fa-times")) { //delete the selected tag by click close icon
+		document.getElementById("selected-tags").removeChild(e.target.parentElement);
+		unfilterTag(e.target.parentElement);
+	} else if (e.target.matches(".tag-search-input")) { //prevent event bubble from clicking on input field
+		e.stopPropagation();
+		e.preventDefault();
+	} else if (e.target.matches(".fa-chevron-down")) { //prevent event bubble from clicking on down arrow
+		e.target.parentElement.click();
+	} else if (!e.target.matches(".tag-btn")) { //close dropdowns when click wherever
+		closeAllDropdowns();
+	}
+})
+
+
 //Add items for dropdown options
 let addItem = (array, parentElm) => {
 	array.forEach(item => {
