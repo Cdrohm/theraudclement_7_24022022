@@ -91,7 +91,7 @@ recipesArray.forEach(recipe => createCard(recipe));
 //Create selected tag button
 let createTag = (target) => {
 	let selectedTag = create("button", {class: "btn selected-tag-btn"});
-	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times ml-2'></i>";
+	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times-circle ml-2'></i>";
 	let computedStyle = getComputedStyle(target.parentNode.parentElement);
 	selectedTag.style.backgroundColor = computedStyle.getPropertyValue("background-color");
 	//Put to DOM
@@ -119,7 +119,7 @@ document.addEventListener("click", function(e) {
 		createTag(e.target);
 		filterByTag(e.target);
 		closeAllDropdowns();
-	} else if (e.target.matches(".fa-times")) { //delete the selected tag by click close icon
+	} else if (e.target.matches(".fa-times-circle")) { //delete the selected tag by click close icon
 		document.getElementById("selected-tags").removeChild(e.target.parentElement);
 		unfilterTag(e.target.parentElement);
 	} else if (e.target.matches(".tag-search-input")) { //prevent event bubble from clicking on input field
@@ -132,6 +132,16 @@ document.addEventListener("click", function(e) {
 	}
 })
 
+//F to unfilter 
+let unfilterTag = (tag) => {
+	let recipeCards = Array.from(document.getElementsByClassName("recipe-card"));
+	let input = tag.textContent.toLowerCase();
+	for (let i = 0; i<recipeCards.length; i++) {
+		if (recipeCards[i].hasAttribute("style") && !recipeCards[i].innerHTML.toLowerCase().includes(input)) {
+				recipeCards[i].removeAttribute("style");
+		}
+	}
+}
 
 //Add items for dropdown options
 let addItem = (array, parentElm) => {
