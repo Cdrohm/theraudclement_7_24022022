@@ -78,6 +78,7 @@ let flatKeyword = allKeywords.flat();
 let allKeywordsLowerCase = [];
 flatKeyword.forEach(word => {allKeywordsLowerCase.push(word.toLowerCase())});
 let searchOptionsNotSorted = [...new Set(allKeywordsLowerCase.flat())];
+
 //sort by alphabetical order
 let searchOptions = quickSort(searchOptionsNotSorted, 0, searchOptionsNotSorted.length-1);
 console.log(searchOptions);

@@ -114,7 +114,7 @@ let tagSearch = (input, options) => {
 
 //Open dropdown
 let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
-console.log ("test");
+//console.log ("test");
 	//close other open dropdowns, if any
 	closeAllDropdowns();
 
@@ -173,3 +173,44 @@ document.getElementById("utensils-tag-btn").addEventListener("click", function(e
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#ingradients-dropdown .dropdown-item")));
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
 tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
+
+
+
+//Search F algo 1
+
+let recipe = []
+
+const searchIpunt = document.querySelector("#search-input");
+
+//Listen user search
+searchIpunt.addEventListener("input", (e) => {
+	const value = e.target.value
+	//console.log(value);
+	recipe.forEach (recipesArray => {
+		console.log("test");
+		const isVisible = recipesArray.includes(value)
+		recipesArray.element.classList.toggle("hide", !isVisible)
+	})
+})
+
+//Searching function
+let launchSearch = (e) => {
+	let mainSection = document.getElementById("main");
+	if (searchInput.value.length > 2) {
+		mainSection.innerHTML = "";
+		let input = e.target.value.toLowerCase();
+		let selectedArr = binarySearchMultiple(keywordObjectArray, input);
+		
+		if (selectedArr.length > 0) {
+			selectedArr.forEach(recipeId => {
+			createCard(recipesArray[recipeId-1]);
+		});
+		} else {
+			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère...</p>";
+		}
+	} else {
+		mainSection.innerHTML = "";
+		recipesArray.forEach(recipe => createCard(recipe));
+	}
+}
+searchInput.addEventListener("keyup", function(e) {launchSearch(e)});
