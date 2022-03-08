@@ -80,7 +80,31 @@ let createCard = (recipe) => {
 	cardContainer.appendChild(cardBody);
 
 	let mainSection = document.getElementById("main");
-    
+
 	//Put into DOM
 	mainSection.appendChild(cardContainer);                        
 }
+
+//Create card for each recipe
+recipesArray.forEach(recipe => createCard(recipe));
+
+//F to split
+let splitSptring = (array) => {
+    let newArray = [];
+    for (let i=0; i < array.lenght; i++) {
+        newArray.puch(array[i].split (""));
+
+    }
+    return newArray;
+}
+
+//Exctract all ingredients names in 1 array
+let ingredientsOptions = [...new Set(recipesArray.map(a => a[1].ingredients.map(b => b.ingredient.toLowerCase())).flat())];
+//Words from ingredients options
+let ingredientsWords = [...new Set (splitString(ingredientsOptions).flat())];
+//Words from recipe name
+let recipeName = [...new Set (recipesArray.map(a => a[1].name.toLocaleLowerCase()))];
+let recipeNameWords = [...new Set (splitString(recipeName).flat())];
+//Words from description 
+let recipeDesc = [...new Set (recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
+let recipeDescWords = splitSptring(recipeDesc).flat();
