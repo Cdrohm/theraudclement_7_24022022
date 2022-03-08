@@ -89,7 +89,7 @@ let createCard = (recipe) => {
 recipesArray.forEach(recipe => createCard(recipe));
 
 //F to split
-let splitSptring = (array) => {
+let splitString = (array) => {
     let newArray = [];
     for (let i=0; i < array.lenght; i++) {
         newArray.puch(array[i].split (""));
@@ -107,7 +107,7 @@ let recipeName = [...new Set (recipesArray.map(a => a[1].name.toLocaleLowerCase(
 let recipeNameWords = [...new Set (splitString(recipeName).flat())];
 //Words from description 
 let recipeDesc = [...new Set (recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
-let recipeDescWords = splitSptring(recipeDesc).flat();
+let recipeDescWords = splitString(recipeDesc).flat();
 
 //All extract to the main search
 let searchOptions = [...new Set (ingredientsWords.concat(recipeNameWords, recipeDescWords))];
