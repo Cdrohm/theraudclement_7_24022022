@@ -177,8 +177,30 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 
 //SEARCH algo 1
 
+<<<<<<< Updated upstream
 //F to extract and sort keywords
 //Sorting F | if more elements left + more elements right
+=======
+//Search F algo 1 (array Recipes: ingredients/appliances/methods/utensils) | map forEach 
+
+/*let recipe = []
+
+const searchIpunt = document.querySelector("#search-input");
+
+//Listen user search (test 1st)
+searchIpunt.addEventListener("input", (e) => {
+	const value = e.target.value
+	//console.log(value);
+	recipe.forEach (recipesArray => {
+		console.log("test");
+		const isVisible = recipesArray.includes(value)
+		recipesArray.element.classList.toggle("hide", !isVisible)
+	})
+})*/
+
+//F to extract and sort all keywords
+//sorting functions
+>>>>>>> Stashed changes
 let quickSort = (array, left, right) => {
 	let index;
 	if (array.length > 1) {
@@ -195,6 +217,183 @@ let quickSort = (array, left, right) => {
 
 //Left + right elements list
 let partition = (array, left, right) => {
+<<<<<<< Updated upstream
 	//
 	let pivot = array[Math.floor((right + left) / 2)];
 }
+=======
+	let pivot = array[Math.floor((right + left) / 2)]; //middle element
+
+	while (left <= right) {
+		while (array[left].localeCompare(pivot) < 0) {
+			left++;
+		}
+		while (array[right].localeCompare(pivot) > 0) {
+			right--;
+		}
+		if (left <= right) {
+			swap(array, left, right);
+			left++;
+			right--;
+		}
+	}
+	return left;
+}
+
+//F to swap position
+let swap = (items, leftIndex, rightIndex) => {
+	var temp = items[leftIndex];
+	items[leftIndex] = items[rightIndex];
+	items[rightIndex] = temp;
+}
+
+//Filter and extract id, name, ingredients, and description
+let createFilteredArr = (arr) => {
+	let filteredArr = [];
+	for (let i = 0; i<arr.length; i++) {
+		let filtered = (({id, ingredients, name, description}) => ({id, ingredients, name, description}))(arr[i][1]);
+		filteredArr.push(filtered);
+	}
+	return filteredArr;
+}
+let filteredArr = createFilteredArr(recipesArray);
+
+function FilterKeyword(item) {
+	this.id = item.id;
+	let thisIngre = item.ingredients.map(b => b.ingredient.toLowerCase()).flat();
+	let keywordString = item.name + " " + thisIngre + " " + item.description;
+	let uniqueValue = [...new Set(keywordString.split(/[\s,().]+/))];
+	this.keyword = quickSort(uniqueValue, 0, uniqueValue.length-1);
+}
+
+let extractKeyword = (arr) => {
+	let newArr = [];
+	for (let i=0; i<arr.length; i++) {
+		let keyword = new FilterKeyword(arr[i]);
+		newArr.push(keyword);
+	}
+	return newArr;
+}
+let filteredKeywordArr = extractKeyword(filteredArr);
+console.log(filteredKeywordArr);
+
+//Take only the keywords
+let allKeywords = [];
+filteredKeywordArr.forEach(item => {allKeywords.push(item.keyword)});
+let flatKeyword = allKeywords.flat();
+let allKeywordsLowerCase = [];
+flatKeyword.forEach(word => {allKeywordsLowerCase.push(word.toLowerCase())});
+let searchOptionsNotSorted = [...new Set(allKeywordsLowerCase.flat())];
+
+//Sort by alphabetical order
+let searchOptions = quickSort(searchOptionsNotSorted, 0, searchOptionsNotSorted.length-1);
+console.log(searchOptions);
+
+function KeywordObject(item) {
+	this.keyword = item;
+	let recipeIds = [];
+	for (let i=0; i<filteredKeywordArr.length; i++) {
+		if (filteredKeywordArr[i].keyword.indexOf(item) >= 0 ) {
+			recipeIds.push(filteredKeywordArr[i].id);
+		}
+	}
+	this.ids = recipeIds;
+}
+
+let keywordArray = (arr) => {
+	let newArr = [];
+	for (let i=0; i<arr.length; i++) {
+		let keyword = new KeywordObject(arr[i]);
+		newArr.push(keyword);
+	}
+	return newArr;
+}
+
+let keywordObjectArray = keywordArray(searchOptions);
+
+//Search binary for 1st result
+let binarySearch = (array, target) => {
+	let start = 0;
+	let end = array.length-1;
+	if (start > end) {
+		return -1;
+	}
+	while(start <= end) {
+		let middleIndex = Math.floor((start+end)/2);
+		if (array[middleIndex].keyword.toLowerCase().includes(target.toLowerCase())) {
+			return middleIndex;
+		} else if (target.toLowerCase().localeCompare(array[middleIndex].keyword.toLowerCase()) < 0) {
+			end = middleIndex - 1;
+		} else if (target.toLowerCase().localeCompare(array[middleIndex].keyword.toLowerCase()) > 0) {
+			start = middleIndex +1;
+		} else {
+			return -1;
+		}
+	}
+}
+
+//Binary search for filter and get the point result
+let binarySearchMultiple = (array, target) => {
+	let firstMatch = binarySearch(array, target);
+	let resultArr = [-1, -1];
+	if (firstMatch == -1) {
+		return resultArr;
+	}
+
+	let leftMost = firstMatch;
+	let rightMost = firstMatch;
+
+	if (firstMatch >= 0) {
+		while (leftMost > 0 && array[leftMost-1].keyword.includes(target)) {
+			leftMost--;
+		}
+		while (rightMost < array.length-1 && array[rightMost+1].keyword.includes(target)) {
+			rightMost++;
+		}
+	}
+
+	resultArr[0] = leftMost;
+	resultArr[1] = rightMost;
+
+	let allSelectedIndex = [];
+	for (let i=resultArr[0]; i<=resultArr[1]; i++) {
+		allSelectedIndex.push(i);
+	}
+
+	let selectedIds = [];
+	allSelectedIndex.forEach(index => {
+		selectedIds.push(array[index].ids);
+	});
+
+	return [...new Set(selectedIds.flat())].sort(function(a,b) {return a-b});	
+}
+
+let searchInput = document.getElementById("search-input");
+
+//Searching function
+let launchSearch = (e) => {
+	let mainSection = document.getElementById("main");
+	if (searchInput.value.length > 2) {
+		mainSection.innerHTML = "";
+		let input = e.target.value.toLowerCase();
+		let selectedArr = binarySearchMultiple(keywordObjectArray, input);
+		
+		if (selectedArr.length > 0) {
+			selectedArr.forEach(recipeId => {
+			createCard(recipesArray[recipeId-1]);
+		});
+		} else {
+			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher <<tarte aux pommes>>, <<poisson>>, etc.</p>";
+		}
+	} else {
+		mainSection.innerHTML = "";
+		recipesArray.forEach(recipe => createCard(recipe));
+	}
+}
+searchInput.addEventListener("keyup", function(e) {launchSearch(e)});
+
+
+
+
+//Search algo 2 (hash table)
+>>>>>>> Stashed changes
