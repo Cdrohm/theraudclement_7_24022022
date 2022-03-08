@@ -427,8 +427,7 @@ let launchSearch = (e) => {
 			createCard(recipesArray[recipeId-1]);
 		});
 		} else {
-			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez
-			chercher « tarte aux pommes », « poisson », etc</p>";
+			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher <<tarte aux pommes>>, <<poisson>>, etc.</p>";
 		}
 	} else {
 		mainSection.innerHTML = "";
