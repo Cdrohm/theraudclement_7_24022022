@@ -3,10 +3,10 @@ import {recipes} from './recipe.js';
 let recipesArray = Object.entries(recipes);
 
 //F to create element
-const create = (elm, attibutes) => {
+const create = (elm, attributes) => {
     const element = document.createElement(elm);
     for (let key in attributes) {
-        element.setAttributes (key, attibutes[key])
+        element.setAttribute (key, attributes[key])
 
     }
     return element;
@@ -108,3 +108,7 @@ let recipeNameWords = [...new Set (splitString(recipeName).flat())];
 //Words from description 
 let recipeDesc = [...new Set (recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
 let recipeDescWords = splitSptring(recipeDesc).flat();
+
+//All extract to the main search
+let searchOptions = [...new Set (ingredientsWords.concat(recipeNameWords, recipeDescWords))];
+console.log(searchOptions);
