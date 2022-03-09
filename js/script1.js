@@ -112,3 +112,15 @@ let recipeDescWords = splitString(recipeDesc).flat();
 //All extract to the main search
 let searchOptions = [...new Set (ingredientsWords.concat(recipeNameWords, recipeDescWords))];
 console.log(searchOptions);
+
+//Search main case
+let searchInput = document.querySelector ("#search-input");
+
+let launchSearch = (e) => {
+	let mainSection = document.getElementById("main");
+	if (searchInput.value.length > 2) {
+		let input = e.target.value.toLocaleLowerCase();
+		let selectedArr = [];
+		mainSection.innerHTML = "";
+	}
+}
