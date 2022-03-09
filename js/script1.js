@@ -122,5 +122,19 @@ let launchSearch = (e) => {
 		let input = e.target.value.toLocaleLowerCase();
 		let selectedArr = [];
 		mainSection.innerHTML = "";
+		for (let i=0; i < recipesArray.length; i++) {
+			if (recipesArray[i][1].name.toLocaleLowerCase().includes(input) ||
+			    recipesArray[i][1].description.toLocaleLowerCase().includes(input) ||
+			    Object.values (recipesArray[i][1].ingredients).indexOf(input) > -1) {
+					selectedArr.push (recipesArray[i]);
+				}
+		}
+
+		if
 	}
 }
+
+searchInput.addEventListener("input", (e) => {
+	const value = e.target.value
+	console.log(value);
+})
