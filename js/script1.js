@@ -130,9 +130,23 @@ let launchSearch = (e) => {
 				}
 		}
 
-		if
+		if (selectedArr.length > 0) {
+			selectedArr.forEach (recipe => {
+				createCard (recipe);
+			})
+		} else {
+			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher <<tarte aux pommes>>, <<poisson>>, etc.</p>";
+
+		}
+	} else {
+		mainSection.innerHTML = "";
+		recipesArray.forEach (recipe => createCard (recipe));
+
 	}
 }
+
+//Implement
+searchInput.addEventListener ("keyup", function (e) {launchSearch (e)});
 
 searchInput.addEventListener("input", (e) => {
 	const value = e.target.value
