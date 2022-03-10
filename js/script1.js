@@ -152,3 +152,14 @@ searchInput.addEventListener("input", (e) => {
 	const value = e.target.value
 	console.log(value);
 })
+
+//Tags
+//F to add items on dropdown
+let addItem = (array, parentElm) => {
+	array.forEach (item => {
+		let option = create ("li", {class: "dropdown-item"});
+		option.textContent = item.charAt(0).toUppercase() + item.slice(1);
+		parentElm.appendChild(option);
+
+	})
+}
