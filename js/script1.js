@@ -108,4 +108,4 @@ console.log(keywordObjectArray);
 
 let searchInput = document.getElementById("search-input");
 //implement the function on key press
-autocomplete(searchInput, searchOptions, 2);
+
