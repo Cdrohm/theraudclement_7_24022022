@@ -242,7 +242,7 @@ let createTag = (target) => {
 }
 
 //F to filter tag
-let filterTag = (tag) => {
+let filterByTag = (tag) => {
 	let recipeCards = array.from (document.getElementsByClassName("recipe-card"));
 	let input = tag.textContent.toLocaleLowerCase();
 
@@ -250,7 +250,29 @@ let filterTag = (tag) => {
 		if (!recipeCards[i].hasAttribute ("style")) {
 			if(!recipeCards[i].innerHTML.toLocaleLowerCase().includes(input)) {
 				recipeCards[i].style.display ("none");
+
+			} else {
+				recipeCards[i].removeAttribute ("style");
 			}
 		}
 	}
 }
+
+//F search by clik on tag
+document.addEventListener("click", function (e) { //Listen click 
+
+	if(e.target.matches(".dropdown-item")) { //select tag
+		createTag(e.target); //create tag selected
+		filterByTag(e.target); //call F filter tag
+		closeAllDropdowns(); //close btn
+
+	} else if (e.target.matches("fa-times-circle")) { //delete tag selected
+		document.getElementById("selected-tags").removeChild(e.target.parentElement); //remove tag btn
+	
+	} else if (e.target.matches(".tag-search-btn")) { 
+		e.stopPropagation();
+		e.preventDefault();
+
+ 	} else if 
+
+})
