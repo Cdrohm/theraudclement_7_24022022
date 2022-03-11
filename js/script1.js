@@ -248,7 +248,9 @@ let filterTag = (tag) => {
 
 	for (let i=0; i < recipeCards.length; i++) {
 		if (!recipeCards[i].hasAttribute ("style")) {
-			if
+			if(!recipeCards[i].innerHTML.toLocaleLowerCase().includes(input)) {
+				recipeCards[i].style.display ("none");
+			}
 		}
 	}
 }
