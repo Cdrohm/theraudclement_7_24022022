@@ -207,6 +207,15 @@ let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
 
 };
 
+//Close dropdown
+let closeAllDropdowns = () => {
+	Array.from (document.getElementsByClassName("tag-btn")).forEach (btn => {btn.removeAttribute ("style")});
+	Array.from (document.getElementsByClassName("tag-search")).forEach (btn => {btn.removeAttribute ("style")});
+	Array.from (document.getElementsByClassName("container-tag-options")).forEach (btn => {btn.removeAttribute ("style")});
+	Array.from (document.getElementsByClassName("opened-btn-container")).forEach (btn => {btn.removeAttribute ("style")});
+	Array.from (document.getElementsByClassName("fa-chevron-down")).forEach (btn => {btn.removeAttribute ("style")});
+	
+}
 //Implementation
 //Ingredients tags
 document.getElementById("ingredients-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")});
@@ -214,3 +223,8 @@ document.getElementById("ingredients-tag-btn").addEventListener("click", functio
 document.getElementById("appliances-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "appliance", "appliances-dropdown", "appliances-tag-input", "#appliances-dropdown .appliance-item")});
 //Utensils tags
 document.getElementById("utensils-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "utensil", "utensils-dropdown", "utensils-tag-input", "#utensils-dropdown .dropdown-item")});
+
+//Ingredients dropdown
+tagSearch(document.getElementById("ingredients-tag-input"), Array.from(document.querySelectorAll("#ingredients-dropdown .dropdown-item")));
+tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
+tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
