@@ -232,5 +232,11 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 //Create tag btn
 let createTag = (target) => {
 	let selectedTag = create ("button", {class: "btn selected-tag-btn"});
-	selectedTag.innerHTML = target.textContent + "<span
+	selectedTag.innerHTML = target.textContent + "<span class= 'fas fa-times-circle ml-2'> </i>";
+
+	let computedStyle = getComputedStyle (target.parentNode.parentElement);
+	selectedTag.style.backgroundColor = computedStyle.getPropertyValue ("background-color");
+
+	//Put
+	document.getElementById("selected-tags").appendChild(selectedTag);
 }
