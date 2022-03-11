@@ -211,4 +211,6 @@ let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
 //Ingredients tags
 document.getElementById("ingredients-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")});
 //Appliances tags
-document.getElementById("appliances-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "appliance", "appliances-dropdown")})
+document.getElementById("appliances-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "appliance", "appliances-dropdown", "appliances-tag-input", "#appliances-dropdown .appliance-item")});
+//Utensils tags
+document.getElementById("utensils-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "utensil", "utensils-dropdown", "utensils-tag-input", "#utensils-dropdown .dropdown-item")});
