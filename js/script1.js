@@ -240,3 +240,15 @@ let createTag = (target) => {
 	//Put
 	document.getElementById("selected-tags").appendChild(selectedTag);
 }
+
+//F to filter tag
+let filterTag = (tag) => {
+	let recipeCards = array.from (document.getElementsByClassName("recipe-card"));
+	let input = tag.textContent.toLocaleLowerCase();
+
+	for (let i=0; i < recipeCards.length; i++) {
+		if (!recipeCards[i].hasAttribute ("style")) {
+			if
+		}
+	}
+}
