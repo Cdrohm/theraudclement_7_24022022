@@ -228,3 +228,9 @@ document.getElementById("utensils-tag-btn").addEventListener("click", function (
 tagSearch(document.getElementById("ingredients-tag-input"), Array.from(document.querySelectorAll("#ingredients-dropdown .dropdown-item")));
 tagSearch(document.getElementById("appliances-tag-input"), Array.from(document.querySelectorAll("#appliances-dropdown .dropdown-item")));
 tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.querySelectorAll("#utensils-dropdown .dropdown-item")));
+
+//Create tag btn
+let createTag = (target) => {
+	let selectedTag = create ("button", {class: "btn selected-tag-btn"});
+	selectedTag.innerHTML = target.textContent + "<span
+}
