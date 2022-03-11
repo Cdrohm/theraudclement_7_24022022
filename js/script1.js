@@ -163,3 +163,52 @@ let addItem = (array, parentElm) => {
 
 	})
 }
+
+//Search tag
+let tagSearch = (input, option) => {
+	input.addEventListener ("input", function (e) {
+		for (let i=0; i < option.lenght; i++) {
+			if (!option[i].textContent.toLocaleLowerCase().includes(e.taget.value.toLowerCase())) {
+				option[i].style.display = "none";
+
+			} else {
+				option[i].removeAttribute ("style");
+			}
+		}
+	})
+}
+
+//Open dropdown (click)
+let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
+	closeAllDropdowns(); //close other drpdwn
+
+	let dropdownContainer = document.getElementById(parentElm);
+	dropdownContainer.textContent = "";
+	//Load tag
+	let choices = array.from(document.querySelector (className));
+	let choicesArr = [];
+	choices.forEach (choice => {
+		choicesArr.push (choice.textContent);
+	})
+
+	let optionsArr = [...new set (choicesArr)];
+
+	//Launch in dpdwn option
+	addItem (optionsArr, dropdownContainer);
+	//Search input
+	let inputField = document.getElementById("inputId");
+
+	//Search F by keywords
+	tagSearch (inputField, Array.from(document.querySelectorAll(optionsArray)));
+	inputField.parentElement.classList.add("show"); //launch tag
+	inputField.parentNode.parentElement.classList.add("show");
+	dropdownContainer.parentElement.classList.add("show-opts");
+	btn.style.display = "none";
+
+};
+
+//Implementation
+//Ingredients tags
+document.getElementById("ingredients-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")});
+//Appliances tags
+document.getElementById("appliances-tag-btn").addEventListener("click", function (e) {openDropdown (e.target, "appliance", "appliances-dropdown")})
