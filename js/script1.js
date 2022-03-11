@@ -210,7 +210,7 @@ let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
 //Close dropdown
 let closeAllDropdowns = () => {
 	Array.from (document.getElementsByClassName("tag-btn")).forEach (btn => {btn.removeAttribute ("style")});
-	Array.from (document.getElementsByClassName("tag-search")).forEach (btn => {btn.removeAttribute ("style")});
+	Array.from (document.getElementsByClassName("tag-search")).forEach (item => {item.classList.remove ("show")});
 	Array.from (document.getElementsByClassName("container-tag-options")).forEach (btn => {btn.removeAttribute ("style")});
 	Array.from (document.getElementsByClassName("opened-btn-container")).forEach (btn => {btn.removeAttribute ("style")});
 	Array.from (document.getElementsByClassName("fa-chevron-down")).forEach (btn => {btn.removeAttribute ("style")});
