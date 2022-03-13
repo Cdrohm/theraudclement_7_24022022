@@ -90,12 +90,12 @@ recipesArray.forEach(recipe => createCard(recipe));
 
 //F to split
 let splitString = (array) => {
-    let newArray = [];
+    let newArr = [];
     for (let i=0; i < array.lenght; i++) {
-        newArray.puch(array[i].split (""));
+        newArr.push(array[i].split (""));
 
     }
-    return newArray;
+    return newArr;
 }
 
 //Exctract all ingredients names in 1 array
@@ -103,7 +103,7 @@ let ingredientsOptions = [...new Set(recipesArray.map(a => a[1].ingredients.map(
 //Words from ingredients options
 let ingredientsWords = [...new Set (splitString(ingredientsOptions).flat())];
 //Words from recipe name
-let recipeName = [...new Set (recipesArray.map(a => a[1].name.toLocaleLowerCase()))];
+let recipeName = [...new Set (recipesArray.map(a => a[1].name.toLowerCase()))];
 let recipeNameWords = [...new Set (splitString(recipeName).flat())];
 //Words from description 
 let recipeDesc = [...new Set (recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
@@ -119,12 +119,12 @@ let searchInput = document.querySelector ("#search-input");
 let launchSearch = (e) => {
 	let mainSection = document.getElementById("main");
 	if (searchInput.value.length > 2) {
-		let input = e.target.value.toLocaleLowerCase();
+		let input = e.target.value.toLowerCase();
 		let selectedArr = [];
 		mainSection.innerHTML = "";
 		for (let i=0; i < recipesArray.length; i++) {
-			if (recipesArray[i][1].name.toLocaleLowerCase().includes(input) ||
-			    recipesArray[i][1].description.toLocaleLowerCase().includes(input) ||
+			if (recipesArray[i][1].name.toLowerCase().includes(input) ||
+			    recipesArray[i][1].description.toLowerCase().includes(input) ||
 			    Object.values (recipesArray[i][1].ingredients).indexOf(input) > -1) {
 					selectedArr.push (recipesArray[i]);
 				}
@@ -166,9 +166,9 @@ let addItem = (array, parentElm) => {
 
 //Search tag
 let tagSearch = (input, option) => {
-	input.addEventListener ("input", function (e) {
+	input.addEventListener ("input", function (e) { //search tag search
 		for (let i=0; i < option.lenght; i++) {
-			if (!option[i].textContent.toLocaleLowerCase().includes(e.taget.value.toLowerCase())) {
+			if (!option[i].textContent.toLowerCase().includes(e.taget.value.toLowerCase())) {
 				option[i].style.display = "none";
 
 			} else {
@@ -195,8 +195,9 @@ let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
 
 	//Launch in dpdwn option
 	addItem (optionsArr, dropdownContainer);
+
 	//Search input
-	let inputField = document.getElementById("inputId");
+	let inputField = document.getElementById("#inputId");
 
 	//Search F by keywords
 	tagSearch (inputField, Array.from(document.querySelectorAll(optionsArray)));
@@ -244,11 +245,11 @@ let createTag = (target) => {
 //F to filter tag
 let filterByTag = (tag) => {
 	let recipeCards = array.from (document.getElementsByClassName("recipe-card"));
-	let input = tag.textContent.toLocaleLowerCase();
+	let input = tag.textContent.toeLowerCase();
 
 	for (let i=0; i < recipeCards.length; i++) {
 		if (!recipeCards[i].hasAttribute ("style")) {
-			if(!recipeCards[i].innerHTML.toLocaleLowerCase().includes(input)) {
+			if(!recipeCards[i].innerHTML.toLowerCase().includes(input)) {
 				recipeCards[i].style.display ("none");
 
 			} else {
@@ -269,10 +270,15 @@ document.addEventListener("click", function (e) { //Listen click
 	} else if (e.target.matches("fa-times-circle")) { //delete tag selected
 		document.getElementById("selected-tags").removeChild(e.target.parentElement); //remove tag btn
 	
-	} else if (e.target.matches(".tag-search-btn")) { 
+	} else if (e.target.matches(".tag-search-btn")) { //click on input field
 		e.stopPropagation();
 		e.preventDefault();
 
- 	} else if 
+ 	} else if (e.target.matches (".fa-chevron-down")) { //Click on down arrow
+		e.target.parentElement.click();
+
+	 } else if (!e.target.matches(".tag-btn")) { //close dpdwn if click nowhere
+		closeAllDropdowns();
+	 }
 
 })
