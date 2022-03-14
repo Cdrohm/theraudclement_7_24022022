@@ -236,7 +236,7 @@ document.addEventListener("click", function(e) {
 		createTag(e.target);
 		filterByTag(e.target);
 		closeAllDropdowns();
-	} else if (e.target.matches(".fa-times")) { //delete the selected tag
+	} else if (e.target.matches(".fa-times-circle")) { //delete the selected tag
 		document.getElementById("selected-tags").removeChild(e.target.parentElement);
 		unfilterTag(e.target.parentElement);
 	} else if (e.target.matches(".tag-search-input")) { //prevent event bubble from clicking on input field
