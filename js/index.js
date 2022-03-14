@@ -200,7 +200,7 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 //create selected tag button
 let createTag = (target) => {
 	let selectedTag = create("button", {class: "btn selected-tag-btn"});
-	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times ml-2'></i>";
+	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times-circle ml-2'></i>";
 	let computedStyle = getComputedStyle(target.parentNode.parentElement);
 	selectedTag.style.backgroundColor = computedStyle.getPropertyValue("background-color");
 	//put to DOM
