@@ -16,56 +16,58 @@ span#launch-search {
 
 /*Dropdown*/
 .dropdown-parent {
-	position: relative;
-	z-index: 100;
+    position: relative;
+    z-index: 100;
 }
 
 .dropdown-choices {
-	display: none;
+    display: none;
 }
 
 .show-opts .dropdown-choices {
-	display: flex;
-	flex-wrap: wrap;
-	writing-mode: vertical-lr;
-	z-index: 3;
-	max-width: 700px;
-	max-height: 400px;
-	overflow: hidden;
-	padding-left: 0;
-	margin: 0;
-	padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    writing-mode: vertical-lr;
+    z-index: 3;
+    max-width: 700px;
+    max-height: 400px;
+    overflow: hidden;
+    padding-left: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .fa-chevron-down {
-	margin-left: 1rem;
-	margin-top: .5rem;
+    margin-left: 1rem;
+    margin-top: .5rem;
 }
 
 li.dropdown-item {
-	color: white;
-	cursor: pointer;
-	writing-mode: horizontal-tb;
-	display: flex;
-	justify-content: flex-start;
-	width: 33%;
+    color: white;
+    cursor: pointer;
+    writing-mode: horizontal-tb;
+    display: flex;
+    justify-content: flex-start;
+    width: 33%;
 }
 
 /*BTN*/
 .btn {
-	padding: 1.25rem;
-	font-weight: 500;
+    padding: 1.25rem;
+    font-weight: 500;
 }
 
 .btn:hover {
-	color: white;
+    color: white;
 }
 
 .bg-primary input[type="text"] {
     color: white;
 }
 
-.btn.bg-green, .bg-green, .bg-green input[type="text"] {
+.btn.bg-green,
+.bg-green,
+.bg-green input[type="text"] {
     background-color: #00dca9;
     color: white;
 }
@@ -75,9 +77,11 @@ li.dropdown-item {
     color: white;
 }
 
-.btn.bg-orange, .bg-orange, .bg-orange input[type="text"] {
-	background-color: #ff5a47;
-	color: white;
+.btn.bg-orange,
+.bg-orange,
+.bg-orange input[type="text"] {
+    background-color: #ff5a47;
+    color: white;
 }
 
 .btn.bg-orange:hover {
@@ -90,43 +94,42 @@ li.dropdown-item {
 }
 
 .opened-btn-container {
-	display: none;
+    display: none;
 }
 
 .opened-btn-container.show {
-	width: fit-content;
-	display: flex;
-	flex-direction: column;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 
 }
 
 button.btn.selected-tag-btn {
-	color: white;
+    color: white;
 }
 
 /*Tags*/
-.tag-search {
 
-}
 
 .tag-search.show {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .tag-search-input::placeholder {
-	color: white;
+    color: white;
 }
 
 .fa-times:before {
-	color: white;
-	border-radius: 50%;
-	
+    color: white;
+    border-radius: 50%;
+
 }
+
 /*Ingredients*/
 .ingredient-container {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 /*Card*/
@@ -135,50 +138,49 @@ button.btn.selected-tag-btn {
 }
 
 .card-deck {
-	margin: 0!important;
-	position: absolute;
-	top: 25rem;
+    margin: 0 !important;
+    position: absolute;
+    top: 25rem;
 }
 
 .card-content {
-	font-size: 0.9rem;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-height: 150px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 150px;
 }
 
 .card-content-title {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .card-img-placeholder {
-	background-color: #c9bdbd;
-	min-height: 200px;
-	border-radius: 10px 10px 0 0;
+    background-color: #c9bdbd;
+    min-height: 200px;
+    border-radius: 10px 10px 0 0;
 }
 
 .ingredient-container {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .description {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 6;
-	-webkit-box-orient: vertical;
-	text-align: justify;
-	padding-right: 1em;
-	margin: 0 -1em -2rem .5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    padding-right: 1em;
+    margin: 0 -1em -2rem .5rem;
 }
 
 /*recipes*/
 article.card.recipe-card.pb-3.mb-5 {
-	background-color: #f8f9fb;
+    background-color: #f8f9fb;
     border: 1px solid transparent;
-	border-radius: 10px;
-	min-width: 30%;
-	max-width: 30%;
-	cursor: pointer;
+    border-radius: 10px;
+    min-width: 30%;
+    max-width: 30%;
+    cursor: pointer;
 }
-
