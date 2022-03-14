@@ -3,7 +3,7 @@ import {recipes} from './recipe.js';
 
 let recipesArray = Object.entries(recipes);
 
-//console.log(recipesArray);
+
 //F create element
 const create = (elm, attributes) => {
 	const element = document.createElement(elm);
