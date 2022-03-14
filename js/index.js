@@ -101,11 +101,11 @@ let recipeNameWords = [...new Set(splitString(recipeName).flat())];
 let recipeDesc = [...new Set(recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
 let recipeDescWords = splitString(recipeDesc).flat();
 //combine all options into one array for the main search
-//let searchOptions = [...new Set(ingredientsWords.concat(recipeNameWords, recipeDescWords))]; //array of 890 strings
+
 
 
 let searchInput = document.getElementById("search-input");
-//implement the function on key press
+
 
 
 	
@@ -200,7 +200,7 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 //create selected tag button
 let createTag = (target) => {
 	let selectedTag = create("button", {class: "btn selected-tag-btn"});
-	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times-circle ml-2'></i>";
+	selectedTag.innerHTML = target.textContent + "<span class='far fa-times-circle ml-2'></i>";
 	let computedStyle = getComputedStyle(target.parentNode.parentElement);
 	selectedTag.style.backgroundColor = computedStyle.getPropertyValue("background-color");
 	//put to DOM
