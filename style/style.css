@@ -33,7 +33,7 @@ span#launch-search {
 	max-height: 400px;
 	overflow: hidden;
 	padding-left: 0;
-	margin: -0.5rem 0 0 0;
+	margin: 0;
 	padding: 0;
 }
 
@@ -100,6 +100,10 @@ li.dropdown-item {
 
 }
 
+button.btn.selected-tag-btn {
+	color: white;
+}
+
 /*Tags*/
 .tag-search {
 
@@ -115,6 +119,11 @@ li.dropdown-item {
 	color: white;
 }
 
+.fa-times:before {
+	color: white;
+	border-radius: 50%;
+	
+}
 /*Ingredients*/
 .ingredient-container {
 	overflow: hidden;
