@@ -2,7 +2,7 @@ import {recipes} from './recipe.js';
 
 let recipesArray = Object.entries(recipes);
 
-//console.log(recipesArray);
+
 
 //f Create element
 const create = (elm, attributes) => {
@@ -91,7 +91,7 @@ recipesArray.forEach(recipe => createCard(recipe));
 //Create selected tag button
 let createTag = (target) => {
 	let selectedTag = create("button", {class: "btn selected-tag-btn"});
-	selectedTag.innerHTML = target.textContent + "<span class='fas fa-times-circle ml-2'></i>";
+	selectedTag.innerHTML = target.textContent + "<span class='far fa-times-circle ml-2'></i>";
 	let computedStyle = getComputedStyle(target.parentNode.parentElement);
 	selectedTag.style.backgroundColor = computedStyle.getPropertyValue("background-color");
 	//Put to DOM
@@ -169,7 +169,7 @@ let tagSearch = (input, options) => {
 
 //Open dropdown
 let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
-//console.log ("test");
+
 	//close other open dropdowns, if any
 	closeAllDropdowns();
 
@@ -240,9 +240,9 @@ const searchIpunt = document.querySelector("#search-input");
 //Listen user search
 searchIpunt.addEventListener("input", (e) => {
 	const value = e.target.value
-	//console.log(value);
+	
 	recipe.forEach (recipesArray => {
-		console.log("test");
+		
 		const isVisible = recipesArray.includes(value)
 		recipesArray.element.classList.toggle("hide", !isVisible)
 	})
@@ -319,7 +319,7 @@ let extractKeyword = (arr) => {
 	return newArr;
 }
 let filteredKeywordArr = extractKeyword(filteredArr);
-console.log(filteredKeywordArr);
+
 
 //Take only the keywords
 let allKeywords = [];
@@ -331,7 +331,7 @@ let searchOptionsNotSorted = [...new Set(allKeywordsLowerCase.flat())];
 
 //Sort by alphabetical order
 let searchOptions = quickSort(searchOptionsNotSorted, 0, searchOptionsNotSorted.length-1);
-console.log(searchOptions);
+
 
 function KeywordObject(item) {
 	this.keyword = item;
