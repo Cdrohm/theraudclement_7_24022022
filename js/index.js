@@ -122,7 +122,7 @@ let recipeNameWords = [...new Set(splitString(recipeName).flat())];
 let recipeDesc = [...new Set(recipesArray.map(a => a[1].description.toLowerCase().replace(/[^\w\s+è+ç+é+ï+à+ù+û+ô+ê+î]/gi, "")))];
 let recipeDescWords = splitString(recipeDesc).flat();
 //combine all options into one array for the main search
-
+let searchOptions = [...new Set(ingredientsWords.concat(recipeDescWords, recipeNameWords))];
 
 //Take search bar
 let searchInput = document.getElementById("search-input");
