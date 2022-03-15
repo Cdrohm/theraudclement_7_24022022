@@ -124,7 +124,7 @@ let recipeDescWords = splitString(recipeDesc).flat();
 //combine all options into one array for the main search
 
 
-
+//Take search bar
 let searchInput = document.getElementById("search-input");
 
 
