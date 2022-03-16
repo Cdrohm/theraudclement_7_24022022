@@ -231,22 +231,8 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 
 
 
-//Search F algo 1 (array Recipes: ingredients/appliances/methods/utensils)
+//Search algo
 
-let recipe = []
-
-const searchIpunt = document.querySelector("#search-input");
-
-//Listen user search
-searchIpunt.addEventListener("input", (e) => {
-	const value = e.target.value
-	
-	recipe.forEach (recipesArray => {
-		
-		const isVisible = recipesArray.includes(value)
-		recipesArray.element.classList.toggle("hide", !isVisible)
-	})
-})
 
 //F to extract and sort all keywords
 //sorting functions
