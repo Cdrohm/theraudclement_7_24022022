@@ -233,6 +233,8 @@ tagSearch(document.getElementById("utensils-tag-input"), Array.from(document.que
 
 //Search algo
 
+//time calcul
+let Debut = new Date();
 
 //F to extract and sort all keywords
 //sorting functions
@@ -401,6 +403,8 @@ let binarySearchMultiple = (array, target) => {
 let searchInput = document.getElementById("search-input");
 
 //Searching function
+let startTime, endTime;
+
 let launchSearch = (e) => {
 	let mainSection = document.getElementById("main");
 	if (searchInput.value.length > 2) {
@@ -413,7 +417,7 @@ let launchSearch = (e) => {
 			createCard(recipesArray[recipeId-1]);
 		});
 		} else {
-			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher <<tarte aux pommes>>, <<poisson>>, etc.</p>";
+			mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher << tarte aux pommes >>, << poisson >>, etc.</p>";
 		}
 	} else {
 		mainSection.innerHTML = "";
@@ -421,3 +425,29 @@ let launchSearch = (e) => {
 	}
 }
 searchInput.addEventListener("keyup", function(e) {launchSearch(e)});
+
+//Get the start time
+startTime = performance.now();
+
+//call the time consuming F
+launchSearch();
+
+//get the end time
+endTime = performance.now();
+
+console.debug('Elapsed time:', (endTime - startTime));
+
+
+//Perform
+
+console.time('search-input');
+ 
+// task starts
+for (var i = 0; i < 100000000;i++);
+// task ends
+ 
+console.timeEnd('search-input');
+
+//End calcul
+let Fin = new Date();
+console.log((Fin - Debut)+ "ms");
