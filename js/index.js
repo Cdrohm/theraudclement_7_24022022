@@ -365,6 +365,10 @@ let binarySearch = (array, target) => {
 }
 
 //Binary search for filter and get the point result
+const {performance} = require ('perf_hooks');
+
+var startTime = performance.now()
+
 let binarySearchMultiple = (array, target) => {
 	let firstMatch = binarySearch(array, target);
 	let resultArr = [-1, -1];
@@ -400,10 +404,13 @@ let binarySearchMultiple = (array, target) => {
 	return [...new Set(selectedIds.flat())].sort(function(a,b) {return a-b});	
 }
 
+var endTime = performance.now();
+console.log('Temps pour la recherche de recette ${endTime - startTime] ms' )
+
 let searchInput = document.getElementById("search-input");
 
 //Searching function
-let startTime, endTime;
+//let startTime, endTime;
 
 let launchSearch = (e) => {
 	let mainSection = document.getElementById("main");
@@ -426,7 +433,7 @@ let launchSearch = (e) => {
 }
 searchInput.addEventListener("keyup", function(e) {launchSearch(e)});
 
-//Get the start time
+/*//Get the start time
 startTime = performance.now();
 
 //call the time consuming F
@@ -450,4 +457,4 @@ console.timeEnd('search-input');
 
 //End calcul
 let Fin = new Date();
-console.log((Fin - Debut)+ "ms");
+console.log((Fin - Debut)+ "ms");*/
