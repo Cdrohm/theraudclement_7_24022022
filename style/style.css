@@ -35,7 +35,6 @@ span#launch-search {
 	padding-left: 0;
 	margin: 0;
 	padding: 0;
-	margin-top: -2px;
 }
 
 .fa-chevron-down {
@@ -50,6 +49,10 @@ li.dropdown-item {
 	display: flex;
 	justify-content: flex-start;
 	width: 33%;
+}
+
+.container-tag-options.bg-green.show-opts, .container-tag-options.bg-orange.show-opts {
+	margin-top: -2px;
 }
 
 /*BTN*/
