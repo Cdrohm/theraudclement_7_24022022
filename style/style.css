@@ -106,6 +106,7 @@ li.dropdown-item {
 
 button.btn.selected-tag-btn {
 	color: white;
+	margin-right: 1rem;
 }
 
 .opened-btn-container.bg-primary.show {
