@@ -5,7 +5,6 @@ import {
 
 let recipesArray = Object.entries(recipes);
 
-
 //F create element
 const create = (elm, attributes) => {
     const element = document.createElement(elm);
@@ -210,7 +209,7 @@ let openDropdown = (btn, className, parentElm, inputId, optionsArray) => {
     dropdownContainer.parentElement.classList.add("show-opts");
     btn.style.display = "none";
 };
-//implement the function
+
 //ingredient tag
 document.getElementById("ingredients-tag-btn").addEventListener("click", function(e) {
     openDropdown(e.target, ".ingredient", "ingredients-dropdown", "ingredients-tag-input", "#ingredients-dropdown .dropdown-item")
