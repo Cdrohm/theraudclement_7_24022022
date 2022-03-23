@@ -33,7 +33,7 @@ span#launch-search {
 	max-height: 400px;
 	overflow: hidden;
 	padding-left: 0;
-	margin: -0.5rem 0 0 0;
+	margin: 0;
 	padding: 0;
 }
 
@@ -49,6 +49,10 @@ li.dropdown-item {
 	display: flex;
 	justify-content: flex-start;
 	width: 33%;
+}
+
+.container-tag-options.bg-green.show-opts, .container-tag-options.bg-orange.show-opts {
+	margin-top: -2px;
 }
 
 /*BTN*/
@@ -100,10 +104,16 @@ li.dropdown-item {
 
 }
 
-/*Tags*/
-.tag-search {
-
+button.btn.selected-tag-btn {
+	color: white;
+	margin-right: 1rem;
 }
+
+.opened-btn-container.bg-primary.show {
+	border-radius: 5px;
+}
+
+/*Tags*/
 
 .tag-search.show {
 	width: 100%;
@@ -115,6 +125,11 @@ li.dropdown-item {
 	color: white;
 }
 
+.fa-times:before {
+	color: white;
+	border-radius: 50%;
+	
+}
 /*Ingredients*/
 .ingredient-container {
 	overflow: hidden;
