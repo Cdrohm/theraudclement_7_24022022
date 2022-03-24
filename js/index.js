@@ -1,10 +1,6 @@
-import {
-    recipes
-} from './recipe.js';
+import {recipes} from './recipe.js';
 
 let recipesArray = Object.entries(recipes);
-
-
 
 //f Create element
 const create = (elm, attributes) => {
