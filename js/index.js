@@ -465,7 +465,6 @@ let launchSearch = (e) => {
     if (searchInput.value.length > 2) {
 
         var startTime = performance.now();
-        console.log("start");
 
         mainSection.innerHTML = "";
         let input = e.target.value.toLowerCase();
@@ -478,7 +477,6 @@ let launchSearch = (e) => {
             });
                 //Time search
                 var endTime = performance.now();
-                console.log("end");
                 console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
         } else {
             mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère... vous pouvez chercher << tarte aux pommes >>, << poisson >>, etc.</p>";
