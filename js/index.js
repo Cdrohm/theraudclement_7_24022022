@@ -152,7 +152,7 @@ let launchSearch = (e) => {
             })
 
             var endTime = performance.now();
-            console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+            console.log(`Call to doSomething took ${endTime - startTime} milliseconds`);
 
         } else {
             mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>";
