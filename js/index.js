@@ -133,6 +133,9 @@ let searchInput = document.getElementById("search-input");
 let launchSearch = (e) => {
     let mainSection = document.getElementById("main");
     if (searchInput.value.length > 2) {
+
+        var startTime = performance.now();
+
         let input = e.target.value.toLowerCase();
         let selectedArr = [];
         mainSection.innerHTML = "";
@@ -147,6 +150,10 @@ let launchSearch = (e) => {
             selectedArr.forEach(recipe => {
                 createCard(recipe);
             })
+
+            var endTime = performance.now();
+            console.log(`Call to doSomething took ${endTime - startTime} milliseconds`)
+
         } else {
             mainSection.innerHTML = "<p id='noresult-msg'>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>";
         }
