@@ -52,7 +52,7 @@ li.dropdown-item {
 }
 
 .container-tag-options.bg-green.show-opts, .container-tag-options.bg-orange.show-opts {
-	margin-top: -2px;
+	margin-top: 0px;
 }
 
 /*BTN*/
@@ -115,10 +115,15 @@ button.btn.selected-tag-btn {
 
 /*Tags*/
 
+.tag-search-input.form-control::placeholder {
+    color: white !important;
+}
+
 .tag-search.show {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	border-bottom: 1px solid white;
 }
 
 .tag-search-input::placeholder {
