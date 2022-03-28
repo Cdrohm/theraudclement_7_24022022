@@ -339,7 +339,6 @@ function FilterKeyword(item) {
     let thisIngre = item.ingredients.map(b => b.ingredient.toLowerCase()).flat();
     let keywordString = item.name + " " + thisIngre + " " + item.description;
     let uniqueValue = [...new Set(keywordString.split(/[\s,().]+/))];
-    console.log(uniqueValue);
     this.keyword = quickSort(uniqueValue, 0, uniqueValue.length - 1);
 }
 
@@ -462,7 +461,6 @@ let launchSearch = (e) => {
     if (searchInput.value.length > 2) {
         mainSection.innerHTML = "";
         let input = e.target.value.toLowerCase().trim();
-        console.log(input + "_");
         let selectedArr = binarySearchMultiple(keywordObjectArray, input);
 
         if (selectedArr.length > 0) {
